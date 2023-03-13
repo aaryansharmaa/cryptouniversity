@@ -1,0 +1,242 @@
+/*/////////////////////////////////////*/
+/* FONTS */
+@font-face {
+  font-family: "Product Sans";
+  font-weight: normal;
+
+  src: local("Product Sans"),
+    url("./assets/fonts/product-sans-regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  font-weight: bold;
+
+  src: local("Product Sans"),
+    url("./assets/fonts/product-sans-bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+* {
+  font-family: "Product Sans", sans-serif;
+}
+/*/////////////////////////////////////*/
+
+/*/////////////////////////////////////*/
+body {
+  /* 1rem = 16px */
+  font-size: 1.25rem;
+
+  --gradient-color-dark: #0067d0;
+  --gradient-color-light: #02b5ca;
+  --white-text: #fff;
+}
+
+/* CHANGE THE COLOR ON SELECTING ELEMENTS */
+::selection {
+  color: var(--white-text);
+  background-color: var(--gradient-color-light);
+}
+
+/* STYLES FOR BUTTONS */
+.btn {
+  font-size: inherit;
+  font-weight: bold;
+
+  padding: 0.5rem 1rem;
+
+  color: var(--gradient-color-light);
+  border: none;
+  border-radius: 3rem;
+  background-color: var(--white-text);
+}
+
+/* STYLES FOR THE ANIMATED BUTTONS */
+.animate-btn {
+  position: relative;
+
+  transition: 0.2s;
+}
+
+.animate-btn:active,
+.animate-btn:focus {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.animate-btn::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  transition: 0.5s;
+
+  border-radius: inherit;
+  background-color: var(--gradient-color-light);
+}
+
+/* STYLES FOR THE ANIMATED LINKS */
+.animate-link {
+  font-size: inherit;
+
+  display: inline-block;
+
+  transition: all 0.3s;
+  text-decoration: none;
+
+  color: var(--white-text);
+}
+
+.btn-collection {
+  display: flex;
+  gap: 1rem;
+}
+
+/* STYLES FOR GRADIENT-BACKGROUND-COLORED BUTTONS */
+.gradient-btn {
+  padding: 4px 1.25rem;
+
+  color: var(--white-text);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--gradient-color-dark),
+    var(--gradient-color-light)
+  );
+}
+
+.gradient-btn.animate-btn::after {
+  background-color: var(--gradient-color-light);
+}
+
+/*/////////////////////////////////////*/
+/* TYPOGRAPHY */
+.heading-container {
+  text-align: center;
+}
+
+.text-color {
+  color: #ffffff;
+}
+
+.text-sizing {
+  color: #f7f7f7;
+  font-size: 50px;
+}
+
+@media (min-width: 600px) {
+  .text-sizing {
+    font-size: 3rem;
+    margin: 0px 150px 0px 150px;
+  }
+}
+
+.text-sizer {
+  font-size: 3rem;
+}
+
+/* STYLES FOR GRADIENT-COLORED TEXT */
+.text-gradient {
+  font-weight: bold;
+
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--gradient-color-dark),
+    var(--gradient-color-light)
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+/* STYLES FOR SECTIONS HEADING */
+.heading-secondary {
+  font-size: 4rem;
+  font-weight: 700;
+
+  display: inline-block;
+
+  margin-bottom: 4rem;
+
+  transition: 0.2s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+/* SKEWING THE SECTIONS HEADING*/
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+
+  text-shadow: 5px 10px 1.25rem rgba(0, 103, 208, 0.2);
+}
+
+/* 48em = 768px || large phone screen size */
+@media (max-width: 48em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+
+/* 27em = 432px || small phone screen size */
+@media (max-width: 27em) {
+  .heading-secondary {
+    font-size: 2.2rem;
+  }
+}
+
+/* HOVER ON NON-TOUCHABLE DEVICES ONLY */
+@media (hover: hover) {
+  .animate-btn:hover {
+    transform: translateY(-3px);
+    color: var(--white-text);
+
+    background-color: inherit;
+    box-shadow: 0 10px 1.25rem rgba(0, 0, 0, 0.2);
+  }
+  .animate-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+
+    opacity: 0;
+  }
+  .animate-btn:hover .discord-icon {
+    filter: brightness(0) invert(1);
+  }
+  .animate-link:hover {
+    transform: scale(1);
+
+    color: var(--white-text);
+    text-shadow: 5px 10px 1.25rem rgb(0 0 0 / 20%);
+  }
+  .animate-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+    background-color: var(--white-text);
+  }
+  .animate-link:hover::after {
+    width: 100%;
+  }
+  .gradient-btn.animate-btn:hover {
+    color: var(--white-text);
+  }
+}
+
+.align-column {
+  @media (max-width: 992px) {
+    display: flex !important;
+  }
+}
+
+.column-list {
+  flex-direction: column !important;
+}

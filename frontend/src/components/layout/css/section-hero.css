@@ -1,0 +1,213 @@
+.hero {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 115vh;
+  padding-top: 3rem;
+
+
+  background-image: linear-gradient(
+    to right bottom,
+    var(--gradient-color-light),
+    var(--gradient-color-dark)
+  );
+  /* blending snow effect */
+
+  mix-blend-mode: multiply;
+
+}
+
+/* blending snow effect */
+.snow-gif {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100%; 
+  width: 105%;
+  object-fit: cover;
+  
+
+  mix-blend-mode: screen;
+}
+
+.nav-links {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-right {
+  flex: 1;
+}
+
+.discord-icon,
+.fox-icon {
+  display: inline-block;
+
+  width: 3rem;
+}
+
+.discord-icon {
+  margin-right: 0.75rem;
+
+  transition: 0.3s;
+}
+
+.fox-icon {
+  display: inline-block;
+
+  width: 3rem;
+  margin-left: 0.75rem;
+}
+
+.wavy {
+  position: absolute;
+  left: 0;
+
+  transform: translateY(-50%);
+}
+
+.wavy span {
+  font-size: 6.25rem;
+  font-weight: bold;
+
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-50%);
+
+  display: inline-block;
+  overflow: hidden;
+
+  animation: typing 2s linear;
+
+  color: var(--white-text);
+}
+
+.wavy-1 {
+  bottom: -10%;
+}
+
+.wavy-1 span {
+  top: -6.25rem;
+  left: 14rem;
+
+  width: 8.6rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+.wavy-2 {
+  bottom: -22%;
+}
+
+.wavy-2 span {
+  top: 4.5rem;
+  left: 45%;
+
+  width: 13.5rem;
+}
+
+.wavy-3 {
+  bottom: -12rem;
+
+  overflow: hidden;
+}
+
+.wavy-3 span {
+  z-index: 2;
+  top: 2rem;
+  right: 0;
+
+  width: 21.6rem;
+
+  transform: translateX(-50%);
+}
+
+.wavy-4 {
+  z-index: 4;
+  bottom: 0;
+
+  transform: translateY(2.5rem);
+}
+
+/* 75em = 1200px || mid labtop screen sizes */
+@media (max-width: 75em) {
+  .wavy-1 {
+    bottom: -7%;
+  }
+  .wavy-2 {
+    top: 60%;
+    bottom: unset;
+    left: 38%;
+  }
+  .wavy-2 span {
+    position: unset;
+  }
+  .wavy-3 {
+    bottom: -7rem;
+  }
+  .wavy-4 {
+    transform: translateY(0.5rem);
+  }
+}
+
+/* 62em = 992px || tablet screen size */
+@media (max-width: 62em) {
+  .wavy-1 {
+    top: 53%;
+    left: 25%;
+  }
+  .wavy-1 span {
+    position: unset;
+  }
+  .wavy-3 {
+    bottom: -3rem;
+  }
+  .wavy-3 span {
+    top: 0;
+  }
+}
+
+/* 48em = 768px || large phone screen size */
+@media (max-width: 48em) {
+  .wavy span {
+    font-size: 4rem;
+  }
+  /* For animation purpose */
+  .wavy-1 span {
+    width: 5.5rem;
+  }
+  .wavy-2 span {
+    width: 8.6rem;
+  }
+  .wavy-3 span {
+    width: 13.75rem;
+  }
+}
+
+/* 36em = 576px || mid phone screen size */
+@media (max-width: 36em) {
+  .wavy-1 {
+    left: 15%;
+  }
+  .wavy-2 {
+    left: 36%;
+  }
+  .wavy-3 {
+    bottom: -2rem;
+
+    overflow: initial;
+  }
+  .wavy-3 span {
+    top: -5rem;
+    right: -5rem;
+  }
+}

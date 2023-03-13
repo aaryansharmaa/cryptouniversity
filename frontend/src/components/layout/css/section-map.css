@@ -1,0 +1,230 @@
+.section-map {
+  position: relative;
+
+  overflow: hidden;
+
+  padding-top: 6rem;
+}
+
+.section-map::before,
+.section-map::after {
+  position: absolute;
+
+  width: 20rem;
+  height: 22rem;
+
+  content: "";
+
+  background-image: url(../../../assets/images/bear-claw.png);
+  background-size: cover;
+}
+.section-map::before {
+  top: 10%;
+  right: 8%;
+}
+.section-map::after {
+  top: 60%;
+  right: 8%;
+
+  transform: rotate(-65deg);
+}
+
+.container-narrow {
+  width: 35rem;
+  margin: 0 auto;
+}
+
+.road-list {
+  margin-top: 1.5rem;
+
+  list-style: none;
+}
+
+.road-dots {
+  position: absolute;
+  z-index: -2;
+  top: 4rem;
+  left: 5rem;
+
+  width: 15.5rem;
+}
+
+.road-list-sec {
+  font-size: inherit;
+
+  position: relative;
+
+  margin-bottom: 5rem;
+
+  list-style: none;
+}
+
+.road-list-sec::before {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 0.8;
+
+  position: absolute;
+  top: 50%;
+  left: -10.125rem;
+
+  width: min-content;
+
+  transform: translateY(-50%);
+  text-align: center;
+
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--gradient-color-dark),
+    var(--gradient-color-light)
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+.road-list-sec::after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: -11.25rem;
+
+  content: "";
+  transform: translateY(-50%);
+
+  background-size: cover;
+}
+
+.geo {
+  visibility: hidden;
+}
+
+.list-1::before {
+  content: "CUB";
+}
+.list-1::after {
+  width: 8.5rem;
+  height: 10.5rem;
+
+  background-image: url(../../../assets/images/0.png);
+}
+.list-2::before {
+  left: -10.75rem;
+
+  content: "ICED OUT";
+}
+.list-2::after {
+  width: 5rem;
+  height: 11.125rem;
+
+  background-image: url(../../../assets/images/1.png);
+}
+.list-3::before {
+  left: -13.75rem;
+
+  content: "ARCTIC HABITAT";
+}
+.list-3::after {
+  width: 7.375rem;
+  height: 11.125rem;
+
+  background-image: url(../../../assets/images/2.png);
+}
+.list-4::before {
+  left: -13.75rem;
+
+  content: "BULLISH BEAR";
+}
+.list-4::after {
+  width: 7.5rem;
+  height: 11.125rem;
+
+  background-image: url(../../../assets/images/3.png);
+}
+
+.road-list-sec li::before {
+  content: "• ";
+
+  color: var(--gradient-color-dark);
+}
+
+.road-list-sec li {
+  margin-bottom: 1.5rem;
+}
+
+/* 75em = 1200px || mid labtop screen sizes */
+@media (max-width: 75em) {
+  .road-dots {
+    left: 0;
+  }
+}
+
+/* 62em = 992px || tablet screen size */
+@media (max-width: 62em) {
+  .container-narrow {
+    margin: 0 0 0 auto;
+    padding-left: 0;
+  }
+
+  .road-list-sec {
+    padding-left: 0;
+  }
+}
+
+/* 48em = 768px || large phone screen size */
+@media (max-width: 48em) {
+  .road-list-sec {
+    width: fit-content;
+    margin-left: auto;
+    padding-right: 2rem;
+  }
+  .road-list-sec::before {
+    content: unset;
+  }
+  .road-list-sec::after {
+    left: -6rem;
+  }
+}
+
+/* 36em = 576px || mid phone screen size */
+@media (max-width: 36em) {
+  .road-list-sec {
+    margin-left: 0;
+  }
+
+  .road-list-sec::after {
+    content: unset;
+  }
+
+  .road-list-sec li {
+    max-width: 90%;
+    margin: 0 auto 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .geo {
+    visibility: visible;
+    /* text-align: left; */
+    /* margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    text-align: center; */
+  }
+}
+
+/* 27em = 432px || small phone screen size */
+@media (max-width: 27em) {
+  .road-list-sec li {
+    max-width: 67%;
+    margin-left: 0;
+  }
+
+  .geo {
+    visibility: visible;
+    /* text-align: left; */
+    /* margin-left: auto;
+    margin-right: auto;
+    width: 8em; */
+    /* padding-right : 100px; */
+  }
+}

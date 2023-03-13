@@ -1,0 +1,72 @@
+.section-about {
+  position: relative;
+
+  content: '';
+
+  
+}
+
+.about-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 47rem;
+  max-width: 90%;
+
+  transform: translate(-50%, -50%);
+
+
+  overflow: hidden;
+
+
+}
+
+.about-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 3;
+
+  text-align: center;
+
+  color: var(--gradient-color-dark);
+}
+
+/* 62em = 992px || tablet screen size */
+@media (max-width: 62em) {
+  .about-text {
+    line-height: 2;
+  }
+  .abandoned{
+    visibility: hidden;
+  }
+}
+
+/* 48em = 768px || large phone screen size */
+@media (max-width: 48em) {
+  .about-text {
+    font-size: 1.15rem;
+    line-height: 1.25;
+
+    letter-spacing: 1.5px;
+  }
+    .abandoned{
+    visibility: hidden;
+  }
+}
+
+/* 36em = 576px || mid phone screen size */
+@media (max-width: 36em) {
+  .about-layer {
+    height: 30rem;
+
+    object-fit: cover;
+  }
+    .abandoned{
+    visibility: hidden;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}

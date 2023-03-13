@@ -1,0 +1,64 @@
+.section-powered {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.powered-gif {
+  position: absolute;
+  z-index: -1;
+
+  width: 100%;
+}
+
+.powered-layer1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.powered-icon {
+  display: block;
+
+  height: 16rem;
+  margin: 0 auto;
+
+  transform: translateY(100%);
+}
+
+/* 75em = 1200px || mid labtop screen sizes */
+@media (max-width: 75em) {
+  .powered-icon {
+    transform: translateY(85%);
+  }
+}
+
+/* 62em = 992px || tablet screen size */
+@media (max-width: 62em) {
+  .powered-icon {
+    transform: translateY(65%);
+  }
+}
+
+/* 48em = 768px || large phone screen size */
+@media (max-width: 48em) {
+  .powered-gif {
+    width: initial;
+    height: 100%;
+  }
+
+  .powered-icon {
+    transform: translateY(45%);
+  }
+}
+
+/* 36em = 576px || mid phone screen size */
+@media (max-width: 36em) {
+  .section-powered {
+    margin-top: 3rem;
+  }
+
+  .powered-icon {
+    transform: translateY(25%);
+  }
+}
