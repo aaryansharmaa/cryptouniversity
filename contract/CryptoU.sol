@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at Etherscan.io on 2022-08-12
- */
-
 // SPDX-License-Identifier: GPL-3.0
 
 // File: @openzeppelin/contracts/utils/Strings.sol
